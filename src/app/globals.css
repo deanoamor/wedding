@@ -38,7 +38,7 @@ button{font-family:inherit}
 .vph{transition:background-color .7s cubic-bezier(.22,1,.36,1)}
 .vx{display:grid}.vx>*{grid-area:1/1;transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
 .snap{flex:none;background:#FBF7F2;border-radius:20px;padding:10px 10px 14px;box-shadow:0 1px 2px rgba(42,32,28,.08),0 18px 40px -18px rgba(42,32,28,.25)}
-.snap p{margin:12px 6px 0;font-size:13px;font-weight:500}
+.snap figcaption{margin:12px 6px 0;font-size:13px;font-weight:500}
 .strip{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;scrollbar-width:none;padding:36px clamp(20px,4vw,48px) 48px}
 .hero-track{position:relative;height:1620px;margin:12px 12px 0}
 .hero-stick{position:sticky;top:12px;height:calc(100vh - 24px);height:calc(100svh - 24px);min-height:560px;border-radius:28px}
@@ -54,3 +54,5 @@ html.lenis,html.lenis body{height:auto}
 @keyframes hint-fade{to{opacity:0}}
 @supports not (animation-timeline: scroll()){.hero-track{height:auto}.hero-stick{position:relative}.couple{transform:translate(-50%,0);animation:none}.scroll-hint{animation:none}}
 input,textarea{font-family:var(--font-sans),system-ui,sans-serif}
+
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

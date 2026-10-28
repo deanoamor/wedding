@@ -12,13 +12,15 @@ export default function Site() {
     <>
       <Sprite v={v} />
       <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 12, background: "#E6DACD" }}>
-        <Hero v={v} />
-        <Layanan v={v} />
-        <Menu v={v} />
-        <Lokasi v={v} />
-        <Foto v={v} />
-        <Testimoni v={v} />
-        <Cta v={v} />
+        <main style={{ display: "contents" }}>
+          <Hero v={v} />
+          <Layanan v={v} />
+          <Menu v={v} />
+          <Lokasi v={v} />
+          <Foto v={v} />
+          <Testimoni v={v} />
+          <Cta v={v} />
+        </main>
         <Footer v={v} />
       </div>
       <Effects />
