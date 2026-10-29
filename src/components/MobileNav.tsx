@@ -71,10 +71,12 @@ export default function MobileNav() {
           <div className="mmenu-layer">
             <div className="mmenu-backdrop" data-lenis-prevent onClick={close} />
             <div ref={panelRef} id="menu-seluler" className="mmenu" role="dialog" aria-modal="true" aria-label="Menu navigasi">
-              <svg className="mmenu-art" viewBox="0 0 320 320" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
-                <circle cx="230" cy="240" r="130" />
-                <circle cx="300" cy="240" r="130" />
-              </svg>
+              <div className="mmenu-art" aria-hidden="true">
+                <svg viewBox="0 0 320 320" fill="none" stroke="currentColor" strokeWidth="1">
+                  <circle cx="230" cy="240" r="130" />
+                  <circle cx="300" cy="240" r="130" />
+                </svg>
+              </div>
               <div className="mmenu-top">
                 <a href="#top" className="mmenu-logo" onClick={close} aria-label="Boenda Ida, ke atas halaman">
                   <svg width="30" height="19" viewBox="0 0 34 22" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">

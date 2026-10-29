@@ -59,8 +59,9 @@ input,textarea{font-family:var(--font-sans),system-ui,sans-serif}
 .mnav-btn{cursor:pointer;min-height:44px;padding:0 18px;border:1px solid rgba(251,247,242,.6);border-radius:999px;display:flex;align-items:center;background:none;color:inherit;font-size:13px;font-weight:500;backdrop-filter:blur(6px)}
 .mmenu-layer{position:fixed;inset:0;z-index:100}
 .mmenu-backdrop{position:absolute;inset:0;background:rgba(30,20,16,.5);backdrop-filter:blur(3px)}
-.mmenu{position:absolute;top:12px;left:12px;right:12px;max-height:calc(100% - 24px);overflow:auto;box-sizing:border-box;padding:20px clamp(20px,4vw,40px) 28px;border-radius:28px;background:#2A201C;color:#FBF7F2;display:flex;flex-direction:column;gap:28px;animation:mmenu-in .32s cubic-bezier(.22,1,.36,1) both}
-.mmenu-art{position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;color:#EBC4C4;opacity:.2;pointer-events:none}
+.mmenu{position:absolute;top:12px;left:12px;right:12px;max-height:calc(100% - 24px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box;padding:20px clamp(20px,4vw,40px) 28px;border-radius:28px;background:#2A201C;color:#FBF7F2;display:flex;flex-direction:column;gap:28px;animation:mmenu-in .32s cubic-bezier(.22,1,.36,1) both}
+.mmenu-art{position:absolute;inset:0;overflow:hidden;border-radius:inherit;color:#EBC4C4;opacity:.2;pointer-events:none}
+.mmenu-art svg{position:absolute;right:-60px;bottom:-60px;width:260px;height:260px}
 .mmenu-top{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
 .mmenu-logo{display:flex;align-items:center;gap:10px;min-height:44px;font-size:20px;font-weight:600;letter-spacing:-.03em}
 .mmenu-close{width:48px;height:48px;border-radius:999px;border:0;background:rgba(251,247,242,.12);color:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center}
@@ -73,3 +74,4 @@ input,textarea{font-family:var(--font-sans),system-ui,sans-serif}
 .mmenu a:focus-visible,.mmenu button:focus-visible,.mnav-btn:focus-visible{outline:2px solid #EBC4C4;outline-offset:3px}
 @keyframes mmenu-in{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.mmenu{animation:none}}
+@media (max-height:560px){.mmenu{gap:14px;padding-bottom:20px}.mmenu-links{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}.mmenu-links a{font-size:24px;padding:4px 0}}
