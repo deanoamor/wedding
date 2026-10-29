@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { buildVals } from "./vals";
-import { Sprite, Hero, Layanan, Menu, Lokasi, Foto, Testimoni, Cta, Footer } from "./sections";
+import { Sprite, Hero, Tentang, Layanan, Paket, Lokasi, Foto, Testimoni, Cta, Footer } from "./sections";
 import Effects from "./Effects";
 
 export default function Site() {
@@ -14,8 +14,9 @@ export default function Site() {
       <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 12, background: "#E6DACD" }}>
         <main style={{ display: "contents" }}>
           <Hero v={v} />
+          <Tentang v={v} />
           <Layanan v={v} />
-          <Menu v={v} />
+          <Paket v={v} />
           <Lokasi v={v} />
           <Foto v={v} />
           <Testimoni v={v} />

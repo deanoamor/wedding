@@ -54,5 +54,3 @@ html.lenis,html.lenis body{height:auto}
 @keyframes hint-fade{to{opacity:0}}
 @supports not (animation-timeline: scroll()){.hero-track{height:auto}.hero-stick{position:relative}.couple{transform:translate(-50%,0);animation:none}.scroll-hint{animation:none}}
 input,textarea{font-family:var(--font-sans),system-ui,sans-serif}
-
-.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

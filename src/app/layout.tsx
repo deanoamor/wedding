@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_ORIGIN, SITE_TITLE, SITE_URL } from "@/lib/site";
 
 const sans = localFont({
   src: "./fonts/BricolageGrotesque.woff2",
@@ -18,28 +18,48 @@ const serif = localFont({
   display: "swap",
 });
 
-const ogImage = { url: `${SITE_URL}og.jpg`, width: 1200, height: 630, alt: "Pengantin berjalan di antara tamu yang menaburkan kelopak bunga" };
+const description =
+  "Wedding organizer di Jakarta dan sekitarnya. Perencanaan pernikahan menyeluruh, koordinasi hari-H, dekorasi, katering, rias, dan dokumentasi. Paket mulai Rp 15.000.000.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_ORIGIN),
-  title: SITE_TITLE,
-  description: SITE_DESCRIPTION,
-  keywords: ["wedding organizer Jakarta", "perencanaan pernikahan", "gedung pernikahan Jakarta", "paket pernikahan", "Boenda Ida"],
-  alternates: { canonical: SITE_URL },
-  robots: { index: true, follow: true },
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Boenda Ida Wedding Organizer | Perencanaan Pernikahan di Jakarta",
+    template: "%s | Boenda Ida",
+  },
+  description,
+  applicationName: SITE_NAME,
+  keywords: [
+    "wedding organizer Jakarta",
+    "wedding planner Jakarta",
+    "paket pernikahan",
+    "jasa wedding organizer",
+    "Boenda Ida",
+  ],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: SITE_URL,
-    siteName: SITE_NAME,
     locale: "id_ID",
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    images: [ogImage],
+    url: "/",
+    siteName: SITE_NAME,
+    title: "Boenda Ida Wedding Organizer",
+    description,
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Pengantin berjalan di antara tamu yang menaburkan kelopak bunga" }],
   },
-  twitter: { card: "summary_large_image", title: SITE_TITLE, description: SITE_DESCRIPTION, images: [ogImage.url] },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boenda Ida Wedding Organizer",
+    description,
+    images: ["/og.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#E6DACD" };
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#E6DACD",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
