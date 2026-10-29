@@ -59,3 +59,5 @@ input,textarea{font-family:var(--font-sans),system-ui,sans-serif}
 .to-top:hover{background:#9A4A5E}
 .to-top:focus-visible{outline:2px solid #FBF7F2;outline-offset:3px;box-shadow:0 0 0 5px #2A201C}
 @media (prefers-reduced-motion:reduce){.to-top,.to-top.is-visible{transition:none}}
+@media (max-width:760px){.testi-row{gap:28px 0!important}.testi-photo{flex:none!important;width:min(100%,200px)!important;min-height:0!important;aspect-ratio:4/5}}
+@media (max-width:760px){#testimoni .wrap{gap:32px!important}#testimoni .testi-row>div:last-child{gap:20px!important}}
