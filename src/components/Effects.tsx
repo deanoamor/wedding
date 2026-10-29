@@ -54,13 +54,14 @@ export default function Effects() {
     const onClick = (e: MouseEvent) => {
       const a = (e.target as Element | null)?.closest?.('a[href^="#"]');
       const id = a?.getAttribute("href");
-      const target = id && id.length > 1 ? document.querySelector<HTMLElement>(id) : null;
-      if (target) {
-        e.preventDefault();
-        lenis.scrollTo(target, { offset: -12, duration: 1.4 });
-      } else if (id === "#top") {
+      const target = id && id.length > 1 && id !== "#top" ? document.querySelector<HTMLElement>(id) : null;
+      if (id === "#top") {
+        // The hero is sticky, so scrolling to its element lands mid-page; go to 0.
         e.preventDefault();
         lenis.scrollTo(0, { duration: 1.4 });
+      } else if (target) {
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: -12, duration: 1.4 });
       }
     };
     document.addEventListener("click", onClick);

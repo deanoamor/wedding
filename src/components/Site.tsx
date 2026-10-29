@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { buildVals } from "./vals";
 import { Sprite, Hero, Tentang, Layanan, Paket, Lokasi, Foto, Testimoni, Cta, Footer } from "./sections";
 import Effects from "./Effects";
+import BackToTop from "./BackToTop";
 
 export default function Site() {
   const [s, setS] = useState({ svc: 1, venue: 1, t: 1 });
@@ -24,6 +25,7 @@ export default function Site() {
         </main>
         <Footer v={v} />
       </div>
+      <BackToTop />
       <Effects />
     </>
   );
