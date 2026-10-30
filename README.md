@@ -9,7 +9,7 @@
 - `src/components/vals.ts` = state akordeon layanan, pilihan gedung, testimoni.
 - `src/components/Effects.tsx` = panel menumpuk, geser horizontal Foto, Lenis smooth scroll.
 - `src/app/globals.css` = seluruh CSS (responsif). Foto ada di `public/`.
-- Sumber desain: board "Website Wedding Organizer Feedback" (Feedback.dc.html). Urutan section: Hero, Galeri, Layanan, Gedung, Paket, Tentang, Testimoni, CTA, Footer.
+- Sumber desain: board "Website Wedding Organizer Feedback" (Feedback.dc.html). Urutan section: Hero, Galeri, Layanan, Gedung, Tentang, Testimoni, Paket, CTA, Footer.
 - Responsif: desktop, tablet (≤1000px, ≤900px), mobile (≤600px).
 - Semua data masih dummy (nama testimoni 4–6, statistik, data Tentang): ganti dengan data dan foto klien asli sebelum rilis.
 

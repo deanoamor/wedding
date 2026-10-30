@@ -17,9 +17,9 @@ export default function Site() {
           <Foto v={v} />
           <Layanan v={v} />
           <Lokasi v={v} />
-          <Paket v={v} />
           <Tentang v={v} />
           <Testimoni v={v} />
+          <Paket v={v} />
           <Cta v={v} />
         </main>
         <Footer v={v} />

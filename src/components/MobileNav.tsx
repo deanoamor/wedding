@@ -8,8 +8,8 @@ const LINKS = [
   ["#galeri", "Galeri"],
   ["#layanan", "Layanan"],
   ["#gedung", "Lokasi"],
-  ["#paket", "Paket"],
   ["#testimoni", "Testimoni"],
+  ["#paket", "Paket"],
 ] as const;
 
 /** Full-width menu panel for mobile and tablet. Anchor clicks are smooth-scrolled by Effects (Lenis). */
