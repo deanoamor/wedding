@@ -155,3 +155,4 @@ input,textarea{font-family:var(--font-sans),system-ui,sans-serif}
 @keyframes mmenu-in{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.mmenu{animation:none}}
 @media (max-height:560px){.mmenu{gap:14px;padding-bottom:20px}.mmenu-links{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}.mmenu-links a{font-size:24px;padding:4px 0}}
+@media (max-width:600px){.h2-right{height:240px}.h2-right>img.main{object-position:50% 14%}}
