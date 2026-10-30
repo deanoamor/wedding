@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 const LINKS = [
-  ["#tentang", "Tentang"],
+  ["#top", "Beranda"],
+  ["#galeri", "Galeri"],
   ["#layanan", "Layanan"],
+  ["#gedung", "Lokasi"],
   ["#paket", "Paket"],
-  ["#gedung", "Gedung"],
-  ["#galeri", "Gallery"],
   ["#testimoni", "Testimoni"],
 ] as const;
 
@@ -62,7 +62,7 @@ export default function MobileNav() {
 
   return (
     <div className="mnav">
-      <button ref={btnRef} type="button" className="mnav-btn" aria-expanded={open} aria-controls="menu-seluler" onClick={() => setOpen(true)}>
+      <button ref={btnRef} type="button" className="mnav-btn" style={{ color: "#FBF7F2" }} aria-expanded={open} aria-controls="menu-seluler" onClick={() => setOpen(true)}>
         Menu
       </button>
       {mounted &&
@@ -98,8 +98,8 @@ export default function MobileNav() {
                   </a>
                 ))}
               </nav>
-              <a href="#kontak" className="mmenu-cta" onClick={close}>
-                Cek tanggalmu
+              <a href="https://wa.me/6281293062254?text=Halo%20Boenda%20Ida%2C%20saya%20mau%20konsultasi%20untuk%20pernikahan%20saya." target="_blank" rel="noopener" className="mmenu-cta" onClick={close}>
+                Hubungi Kami
               </a>
             </div>
           </div>,
