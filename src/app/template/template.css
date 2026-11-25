@@ -1,0 +1,31 @@
+/* Galeri template undangan (hanya lihat). Palet & font sama dengan situs Boenda Ida. */
+.tpl{--ink:#2A201C;--line:rgba(42,32,28,.14);--wine:#9A4A5E;min-height:100vh;background:#FBF7F2;color:var(--ink);font-family:var(--font-sans),system-ui,sans-serif}
+.tpl *{box-sizing:border-box}
+.tpl-wrap{max-width:1240px;margin:0 auto;padding:clamp(24px,4vw,48px) clamp(16px,4vw,48px) 80px}
+.tpl-back{display:inline-block;font-size:14px;font-weight:500;opacity:.7;margin-bottom:20px;min-height:44px;line-height:44px}
+.tpl-back:hover{opacity:1;color:var(--wine)}
+.tpl-head h1{margin:0;font-family:var(--font-serif),Georgia,serif;font-weight:400;font-size:clamp(38px,6vw,64px);letter-spacing:-.04em;line-height:1}
+.tpl-head p{margin:12px 0 0;max-width:46em;font-size:16px;line-height:1.6;opacity:.75;text-wrap:pretty}
+.tpl-grid{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.tpl-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.tpl-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.tpl-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.tpl-thumb{position:relative;aspect-ratio:5/8;overflow:hidden;border-radius:10px;background:#EADCCB;border:1px solid rgba(0,0,0,.05)}
+.tpl-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.tpl-name{margin:12px 0 0;font-size:15px;font-weight:600}
+.tpl-note{margin:4px 0 12px;font-size:13px;line-height:1.5;opacity:.7;text-wrap:pretty}
+.tpl-btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;color:inherit;font:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background-color .2s,border-color .2s}
+.tpl-btn:hover{background:#F3ECE3;border-color:rgba(42,32,28,.3)}
+.tpl-btn:focus-visible,.tpl-close:focus-visible,.tpl-back:focus-visible{outline:2px solid var(--wine);outline-offset:2px}
+
+.tpl-dialog{padding:0;border:0;border-radius:18px;background:#FBF7F2;color:var(--ink);width:min(520px,94vw);max-height:94vh;overflow:hidden}
+.tpl-dialog::backdrop{background:rgba(20,12,10,.6)}
+.tpl-dialog-in{display:flex;flex-direction:column;max-height:94vh}
+.tpl-dialog-bar{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);background:#fff}
+.tpl-dialog-bar strong{display:block;font-size:15px}
+.tpl-dialog-bar span{display:block;margin-top:2px;font-size:13px;opacity:.7}
+.tpl-close{flex:none;width:44px;height:44px;margin:-8px -8px -8px 0;border:0;border-radius:10px;background:none;color:inherit;font-size:28px;line-height:1;cursor:pointer}
+.tpl-close:hover{background:#F3ECE3}
+.tpl-dialog-img{overflow:auto;padding:16px;display:flex;justify-content:center}
+.tpl-dialog-img img{display:block;width:100%;max-width:390px;height:auto;border-radius:12px;border:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){.tpl-btn{transition:none}}
