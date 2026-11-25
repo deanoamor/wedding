@@ -4,11 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import { TEMPLATES, type TemplateItem } from "@/lib/templates";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const src = (id: string) => `${BASE}/template-previews/${id}.webp`;
+const thumb = (id: string) => `${BASE}/template-previews/${id}.webp`;
+const view = (id: string) => `${BASE}/template-view/${id}.html`;
 
-/** Galeri template (hanya lihat). "Pratinjau" membuka gambar hero lebih besar. */
+/**
+ * Galeri template (hanya lihat). "Pratinjau" membuka contoh template utuh di iframe
+ * (HTML statis dari /template-view/{id}.html) yang bisa di-scroll, mode HP atau desktop.
+ */
 export default function TemplateGallery() {
   const [open, setOpen] = useState<TemplateItem | null>(null);
+  const [device, setDevice] = useState<"hp" | "desktop">("hp");
   const dialog = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -25,7 +30,7 @@ export default function TemplateGallery() {
           <li key={t.id} className="tpl-card">
             <div className="tpl-thumb">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src(t.id)} alt={`Tampilan awal template ${t.name}`} width={780} height={1248} loading={i < 4 ? "eager" : "lazy"} />
+              <img src={thumb(t.id)} alt={`Tampilan awal template ${t.name}`} width={780} height={1248} loading={i < 4 ? "eager" : "lazy"} />
             </div>
             <h2 className="tpl-name">{t.name}</h2>
             <p className="tpl-note">{t.note}</p>
@@ -44,17 +49,26 @@ export default function TemplateGallery() {
         {open && (
           <div className="tpl-dialog-in">
             <div className="tpl-dialog-bar">
-              <div>
-                <strong>{open.name}</strong>
-                <span>{open.note}</span>
+              <div className="tpl-dialog-title">
+                <strong>Pratinjau: {open.name}</strong>
+                <span>Contoh tampilan. Musik dan form ucapan tidak aktif.</span>
               </div>
+              <div className="tpl-seg" role="group" aria-label="Ukuran layar">
+                <button type="button" aria-pressed={device === "hp"} onClick={() => setDevice("hp")}>HP</button>
+                <button type="button" aria-pressed={device === "desktop"} onClick={() => setDevice("desktop")}>Desktop</button>
+              </div>
+              <a className="tpl-newtab" href={view(open.id)} target="_blank" rel="noopener noreferrer">Tab baru</a>
               <button type="button" className="tpl-close" onClick={() => setOpen(null)} aria-label="Tutup pratinjau">
                 ×
               </button>
             </div>
-            <div className="tpl-dialog-img">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src(open.id)} alt={`Tampilan awal template ${open.name}`} width={780} height={1248} />
+            <div className="tpl-stage">
+              <iframe
+                key={`${open.id}-${device}`}
+                className={device === "hp" ? "tpl-frame tpl-frame-hp" : "tpl-frame"}
+                src={view(open.id)}
+                title={`Pratinjau ${open.name}`}
+              />
             </div>
           </div>
         )}
